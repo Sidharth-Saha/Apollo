@@ -1,5 +1,6 @@
-[gd_scene load_steps=16 format=3 uid="uid://bmy0lg0g7av7h"]
+[gd_scene load_steps=17 format=3 uid="uid://bmy0lg0g7av7h"]
 
+[ext_resource type="Script" path="res://player/Player.cs" id="1_1lbs1"]
 [ext_resource type="Texture2D" uid="uid://bda2h7u0nxwql" path="res://tile_maps/tilemap.png" id="1_eiemx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_baql2"]
@@ -113,6 +114,7 @@ animations = [{
 }]
 
 [node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_1lbs1")
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
