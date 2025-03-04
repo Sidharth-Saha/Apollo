@@ -6,7 +6,7 @@ public partial class Player : CharacterBody2D
 	[Export]
 	public float Speed = 50.0f;
 
-	private Vector2[] validMovementDirections =
+	private static Vector2[] validMovementDirections =
 	{
 		Vector2.Up,
 		Vector2.Right,
