@@ -1,5 +1,6 @@
 using Godot;
 using System;
+using System.Diagnostics;
 
 public partial class Player : CharacterBody2D
 {
@@ -17,6 +18,8 @@ public partial class Player : CharacterBody2D
 		(Vector2.Down + Vector2.Right).Normalized(),
 		(Vector2.Down + Vector2.Left).Normalized()
 	};
+
+	private AnimatedSprite2D animatedSprite2D;
 
 	private void ProcessMovementInput()
 	{
@@ -37,6 +40,36 @@ public partial class Player : CharacterBody2D
 			}
 		}
 		Velocity = movementDirection * Speed;
+		if (Velocity.LengthSquared() > 0.0f)
+		{
+			if (Velocity.Y > 0.0f)
+			{
+				animatedSprite2D.Play("down");
+			}
+            else if (Velocity.Y < 0.0f)
+			{
+				animatedSprite2D.Play("up");
+			}
+			else if (Velocity.X > 0.0f)
+			{
+				animatedSprite2D.Play("right");
+			}
+			else
+			{
+				animatedSprite2D.Play("left");
+			}
+        }
+		else
+		{
+			animatedSprite2D.Stop();
+			animatedSprite2D.Frame = 0;
+		}
+    }
+
+    public override void _Ready()
+    {
+		animatedSprite2D = GetNode<AnimatedSprite2D>("AnimatedSprite2D");
+		Debug.Assert(animatedSprite2D != null);
     }
 
     public override void _PhysicsProcess(double delta)
