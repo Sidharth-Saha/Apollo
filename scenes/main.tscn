@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=4 uid="uid://qj04iwa7payq"]
+
+[ext_resource type="PackedScene" uid="uid://rskl0xmigbw8" path="res://tile_maps/rpg_urban_tile_map.tscn" id="1_rw1kx"]
+[ext_resource type="PackedScene" uid="uid://bmy0lg0g7av7h" path="res://player/player.tscn" id="2_8f5p5"]
+
+[node name="Main" type="Node2D"]
+
+[node name="RPGUrbanTileMap" parent="." instance=ExtResource("1_rw1kx")]
+position = Vector2(576, 324)
+scale = Vector2(2.5, 2.5)
+tile_map_data = PackedByteArray("AAD+//7/AAAAAAAAAAD///7/AAABAAAAAAAAAP7/AAABAAAAAAABAP7/AAACAAAAAAABAP//AAACAAEAAAABAAAAAAACAAEAAAABAAEAAAACAAIAAAAAAAEAAAABAAIAAAD//wEAAAABAAIAAAD+/wEAAAAAAAIAAAD+/wAAAAAAAAEAAAD+////AAAAAAEAAAD/////AAABAAEAAAAAAP//AAABAAEAAAAAAAAAAAABAAEAAAD//wAAAAABAAEAAAA=")
+
+[node name="Player" parent="." instance=ExtResource("2_8f5p5")]
+position = Vector2(576, 324)
+scale = Vector2(2.5, 2.5)
